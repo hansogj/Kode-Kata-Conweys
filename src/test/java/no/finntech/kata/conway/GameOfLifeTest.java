@@ -22,4 +22,16 @@ public final class GameOfLifeTest {
         assertThat(GameOfLife.nextGeneration(initialGrid)).isEqualTo(expectedGrid);
     }
 
+    @Test
+    public void shouldStayAliveWhen2liveNeighbours() {
+        final boolean[][] initialGrid  = new boolean[][] {{true, false, false},
+                                                          {true, false, false},
+                                                          {true, false, false}};
+        final boolean[][] expectedGrid = new boolean[][] {{false, false, false},
+                                                          {true, false, false},
+                                                          {false, false, false}};
+
+        assertThat(GameOfLife.nextGeneration(initialGrid)).isEqualTo(expectedGrid);
+    }
+
 }
