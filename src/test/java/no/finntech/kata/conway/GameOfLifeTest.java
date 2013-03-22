@@ -15,7 +15,7 @@ public final class GameOfLifeTest {
     }
 
     @Test
-    public void AnyLiveCellWithNoNeighborShouldDie() {
+    public void liveCellWithNoNeighborsShouldDie() {
         final boolean[][] initialGrid  = new boolean[][] {{false, false},{true, false}};
         final boolean[][] expectedGrid = new boolean[][] {{false, false},{false, false}};
 
