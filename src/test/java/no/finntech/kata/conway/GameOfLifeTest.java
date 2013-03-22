@@ -13,4 +13,13 @@ public final class GameOfLifeTest {
 
         assertThat(GameOfLife.nextGeneration(initialGrid)).isEqualTo(expectedGrid);
     }
+
+    @Test
+    public void AnyLiveCellWithNoNeighborShouldDie() {
+        final boolean[][] initialGrid  = new boolean[][] {{false, false},{true, false}};
+        final boolean[][] expectedGrid = new boolean[][] {{false, false},{false, false}};
+
+        assertThat(GameOfLife.nextGeneration(initialGrid)).isEqualTo(expectedGrid);
+    }
+
 }
