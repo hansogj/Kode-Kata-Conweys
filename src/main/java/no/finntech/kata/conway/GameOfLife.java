@@ -7,7 +7,7 @@ public final class GameOfLife {
         for (int x = 0; x < grid.length; x++) {
             for (int y = 0; y < grid[x].length; y++) {
                 //final int numberOfLiveNeighbours = getNumberOfLiveNeighbours(grid, x, y);
-                result[x][y] = false;
+                result[x][y] = result[x][y] && getNumberOfLiveNeighbours(grid, x, y) >= 2;
             }
         }
         return result;
@@ -31,6 +31,7 @@ public final class GameOfLife {
     }
 
     private static boolean exists(boolean[][] grid, int x, int y) {
-        return (x>=0 && x <= grid.length && y >= 0 && y <= grid[x].length);
+
+        return (x>=0 && x < grid.length && y >= 0 && y < grid[x].length);
     }
 }
